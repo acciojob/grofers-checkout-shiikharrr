@@ -33,6 +33,14 @@
       </tbody>
     </table>
     <button id="sum_btn">Get Total Price</button>
-    <script src="script.js"></script>
+    <script>
+  let total = 0;
+
+  document.querySelectorAll(".prices").forEach(price => {
+    total += Number(price.textContent);
+  });
+
+  document.getElementById("ans").textContent = total;
+</script>
   </body>
 </html>
