@@ -1,19 +1,17 @@
 const button = document.getElementById("sum_btn");
 
 button.addEventListener("click", () => {
+  const prices = document.querySelectorAll(".prices");
   const table = document.querySelector("table");
-  const rows = document.querySelectorAll("table tr");
-
-  const oldRow = document.getElementById("total_row");
-  if (oldRow) oldRow.remove();
 
   let total = 0;
+  prices.forEach((price) => {
+    total += Number(price.textContent.trim());
+  });
 
-  for (let i = 1; i < rows.length; i++) {
-    const cells = rows[i].querySelectorAll("td");
-    if (cells.length >= 2) {
-      total += Number(cells[1].textContent.trim()) || 0;
-    }
+  const oldRow = document.getElementById("total_row");
+  if (oldRow) {
+    oldRow.remove();
   }
 
   const tr = document.createElement("tr");
