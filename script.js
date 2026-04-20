@@ -1,15 +1,19 @@
-function calculateTotal() {
-  let total = 0;
+document.addEventListener("DOMContentLoaded", function () {
 
-  document.querySelectorAll(".prices").forEach(price => {
-    total += Number(price.innerText);
-  });
+  function calculateTotal() {
+    let total = 0;
 
-  document.getElementById("ans").innerText = total;
-}
+    document.querySelectorAll(".prices").forEach(price => {
+      total += Number(price.innerText);
+    });
 
-// Run on load
-window.onload = calculateTotal;
+    document.getElementById("ans").innerText = total;
+  }
 
-// Run on button click
-document.getElementById("sum_btn").addEventListener("click", calculateTotal);
+  // Run once
+  calculateTotal();
+
+  // Add click event safely
+  document.getElementById("sum_btn").addEventListener("click", calculateTotal);
+
+});
