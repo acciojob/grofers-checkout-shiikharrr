@@ -1,10 +1,15 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const prices = document.querySelectorAll(".prices");
+function calculateTotal() {
   let total = 0;
 
-  prices.forEach(price => {
-    total += parseInt(price.innerText.trim(), 10);
+  document.querySelectorAll(".prices").forEach(price => {
+    total += Number(price.innerText);
   });
 
   document.getElementById("ans").innerText = total;
-});
+}
+
+// Run on load
+window.onload = calculateTotal;
+
+// Run on button click
+document.getElementById("sum_btn").addEventListener("click", calculateTotal);
