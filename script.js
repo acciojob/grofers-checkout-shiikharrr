@@ -1,8 +1,15 @@
-const prices = document.querySelectorAll(".prices");
-let total = 0;
+function calculateTotal() {
+  const prices = document.querySelectorAll(".prices");
+  let total = 0;
 
-prices.forEach(price => {
-  total += parseInt(price.textContent.trim(), 10);
-});
+  prices.forEach(price => {
+    const value = parseInt(price.innerText.trim(), 10);
+    if (!isNaN(value)) {
+      total += value;
+    }
+  });
 
-document.getElementById("ans").textContent = total;
+  document.getElementById("ans").innerText = total;
+}
+
+calculateTotal();
