@@ -1,23 +1,18 @@
-document.addEventListener("DOMContentLoaded", () => {
+function calculateTotal() {
+  let total = 0;
 
-  function calculateTotal() {
-    let total = 0;
+  document.querySelectorAll(".prices").forEach(price => {
+    total += Number(price.textContent);
+  });
 
-    document.querySelectorAll(".prices").forEach(price => {
-      total += Number(price.textContent); // ✅ IMPORTANT CHANGE
-    });
+  document.getElementById("ans").textContent = total;
+}
 
-    const ans = document.getElementById("ans");
-    if (ans) {
-      ans.textContent = total; // ✅ use textContent here also
-    }
-  }
+// Run initially
+calculateTotal();
 
-  calculateTotal();
-
-  const btn = document.getElementById("sum_btn");
-  if (btn) {
-    btn.addEventListener("click", calculateTotal);
-  }
-
-});
+// Recalculate when button is clicked (Cypress may trigger this)
+const btn = document.getElementById("sum_btn");
+if (btn) {
+  btn.addEventListener("click", calculateTotal);
+}
