@@ -1,46 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Grofers Checkout</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <table>
-      <tbody>
-        <tr>
-          <th>Item</th>
-          <th>Price</th>
-        </tr>
-        <tr>
-          <td class="item">Item 1</td>
-          <td class="prices">100</td>
-        </tr>
-        <tr>
-          <td class="item">Item 2</td>
-          <td class="prices">200</td>
-        </tr>
-        <tr>
-          <td class="item">Item 3</td>
-          <td class="prices">110</td>
-        </tr>
-        <tr>
-          <td>Total Price</td>
-          <td id="ans"></td>
-        </tr>
-      </tbody>
-    </table>
-    <button id="sum_btn">Get Total Price</button>
-    <script>
-  let total = 0;
-
-  document.querySelectorAll(".prices").forEach(price => {
-    total += Number(price.textContent);
-  });
-
-  document.getElementById("ans").textContent = total;
-</script>
-  </body>
-</html>
+<table>
+  <thead>
+    <tr>
+      <th>Item</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="item">Item 1</td>
+      <td class="prices">100</td>
+    </tr>
+    <tr>
+      <td class="item">Item 2</td>
+      <td class="prices">123</td>
+    </tr>
+    <tr>
+      <td class="item">Item 3</td>
+      <td class="prices">110</td>
+    </tr>
+    <tr>
+      <td>Total Price</td>
+      <td id="ans"></td>
+    </tr>
+  </tbody>
+</table>
