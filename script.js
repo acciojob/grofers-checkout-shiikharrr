@@ -1,14 +1,13 @@
-document.addEventListener('DOMContentLoaded', function() {
-  function calculateTotal() {
-    let total = 0;
-    const priceElements = document.querySelectorAll('.prices');
-    priceElements.forEach((priceElement) => {
-      const priceValue = parseFloat(priceElement.textContent.trim());
-      if (!isNaN(priceValue)) {
-        total += priceValue;
-      }
-    });
-    document.getElementById('ans').textContent = total;
-  }
-  calculateTotal();
-});
+function calculateTotal() {
+  let total = 0;
+  document.querySelectorAll('.prices').forEach((price) => {
+    total += parseFloat(price.textContent.trim()) || 0;
+  });
+  document.getElementById('ans').textContent = total;
+}
+
+// Calculate on page load → shows 410
+calculateTotal();
+
+// Recalculate on button click → shows updated total (333)
+document.getElementById('sum_btn').addEventListener('click', calculateTotal);
